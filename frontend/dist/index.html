@@ -18,6 +18,26 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
     <link rel="stylesgeet"
           href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        /* Style for positioning toast */
+        .toast {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#myBtn").click(function () {
+                $("#myToast").toast("show");
+            });
+        });
+    </script>
 </head>
 
 <body class="profile-page">
@@ -34,16 +54,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item mt-3 mr-4">
+                    <a type="button" class="btn btn-primary" id="myBtn">
+                        <i class="material-icons">notifications
+                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
+                        </i>
+                    </a>
                 <li class="dropdown nav-item">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton1"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         <img style="height: 64px; width: 64px; border-radius: 50%!important;"
                              src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg">
                         Никита Сергеевич
                     </a>
-                    <div class="dropdown-menu dropdown-with-icons">
+                    <div class="dropdown-menu dropdown-with-icons" aria-labelledby="dropdownMenuButton1">
                         <a href="#" class="dropdown-item">
                             <i class="material-icons">person</i> Профиль
                         </a>
@@ -57,7 +83,17 @@
         </div>
     </div>
 </nav>
-
+<div class="toast position-fixed top-50 start-50 translate-middle" id="myToast" data-bs-autohide="false"
+     style="z-index: 10000;">
+    <div class="toast-header">
+        <strong class="me-auto"><i class="bi-gift-fill"></i> Поздравляю</strong>
+        <small>6 минут назад</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body">
+        Ваш кейс проверен, вы можете добавить его к своей колекции.<a href="#">Добавить!</a>
+    </div>
+</div>
 <div class="page-header header-filter" data-parallax="true"
      style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
 <div class="main main-raised">
@@ -84,33 +120,35 @@
                 <p>Тут должно быть описание</p>
             </div>
             <div class="row text-center">
-                  <div class="bio-row">
-                      <p><b>Имя:</b> Никита</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><b>Фамилия:</b> Сергеевич</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><b>Город:</b> Ростов на Дону</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><b>День рождения:</b> 13 Июля</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><b>Специальность:</b> WEB Developer</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><b>Email:</b> ivan229@yahoo.com</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><b>Skype:</b> sshhwi.aiiiw</p>
-                  </div>
-                <div class="bio-row">
-                    <p><b>Статус:</b>
-                      <span class="visually-hidden spinner-grow text-success" role="status" >Тружусь в поте лица</span>
-                      </p>
-                  </div>
-              </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>Имя:</b> Никита</p>
+                </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>Фамилия:</b> Сергеевич</p>
+                </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>Город:</b> Ростов на Дону</p>
+                </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>День рождения:</b> 13 Июля</p>
+                </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>Специальность:</b> WEB Developer</p>
+                </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>Email:</b> ivan229@yahoo.com</p>
+                </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>Skype:</b> sshhwi.aiiiw</p>
+                </div>
+                <div class="bio-row" style="width: 50%;">
+                    <p><b>Состояние:</b>
+                    <div class="spinner-grow text-success" role="status">
+                        <span class="visually-hidden"></span>
+                    </div>
+                    </p>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto">
                     <div class="profile-tabs">
@@ -141,6 +179,9 @@
             <div class="tab-content tab-space">
                 <div class="tab-pane active text-center gallery" id="studio">
                     <div class="container">
+                        <button type="button" class="btn btn-outline-success text-center mb-2">
+                            Добавить задание
+                        </button>
                         <div class="timeline">
                             <div class="timeline-row">
                                 <div class="timeline-time">
@@ -167,25 +208,29 @@
                 </div>
                 <div class="tab-pane text-center gallery" id="works">
                     <div class="row">
-                        <div class="col-md-12 ml-auto">
+                        <div class="col-3"></div>
+                        <div class="col-6 ml-auto">
                             <form method="post">
-                                <select class="form-select" multiple aria-label="multiple select example" style="width: 350px">
-                                  <option selected>Категории</option>
-                                  <option value="1">Python</option>
-                                  <option value="2">1C</option>
-                                  <option value="3">Java</option>
+                                <select class="form-select mb-2" style="display: flex;" multiple
+                                        aria-label="multiple select example"
+                                        style="width: 350px">
+                                    <option selected>Категории</option>
+                                    <option value="1">Python</option>
+                                    <option value="2">1C</option>
+                                    <option value="3">Java</option>
                                 </select>
-                                <div class="mb-3">
+                                <div class="mb-2">
                                     <input type="text" class="form-control" id="exampleFormControlInput1"
                                            placeholder="Краткое задание">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-2">
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                               placeholder="Подробное описание проблемы"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-outline-success">Найти помощь</button>
                             </form>
                         </div>
+                        <div class="col-3"></div>
                     </div>
                 </div>
                 <div class="tab-pane text-center gallery" id="favorite">
