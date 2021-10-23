@@ -2,7 +2,6 @@ from django.views.generic import DetailView
 from .models import improvedUserModel
 from rest_framework import generics
 from . import serializers
-from django.contrib.auth.models import User
 
 
 class UserList(generics.ListAPIView):
